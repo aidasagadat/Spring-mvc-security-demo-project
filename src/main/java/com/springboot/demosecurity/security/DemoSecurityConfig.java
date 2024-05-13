@@ -52,7 +52,10 @@ public class DemoSecurityConfig {
                                 .loginProcessingUrl("/authenticateTheUser")
                                 .permitAll()
 
-                        );
+                        )
+                .logout(logout -> logout.permitAll());
+
+        ;
 
         return http.build();
 
