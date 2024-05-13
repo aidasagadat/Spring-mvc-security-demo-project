@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Timurid Company Home Page</title>
@@ -7,9 +8,15 @@
 <body>
     <h2>Timurid Company Home Page</h2>
 
-    <hr>
-
     Welcome to TIMURID company home page!
+
+    <br>
+    <hr>
+    <br>
+
+    User: <span sec:authentication="principal.username"></span>
+    <br>
+    Role(s): <span sec:authentication="principal.authorities"></span>
 
     <br>
     <br>
