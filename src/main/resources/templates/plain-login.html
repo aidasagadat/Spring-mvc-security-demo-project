@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+
+    <style>
+        .failed{
+            color: #CB2400;
+        }
+
+    </style>
+
 </head>
 <body>
 
@@ -13,7 +21,7 @@
 
     <!-- Check for logging error -->
     <div th:if="${param.error}">
-        <i>Invalid username or password. Try again.</i>
+        <i class="failed">Invalid username or password. Try again.</i>
     </div>
 
 
