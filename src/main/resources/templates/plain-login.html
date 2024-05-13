@@ -8,9 +8,14 @@
 
 <h3>Log In</h3>
 
-<br>
-
 <form action="#" th:action="@{/authenticateTheUser}" method="POST">
+
+
+    <!-- Check for logging error -->
+    <div th:if="${param.error}">
+        <i>Invalid username or password. Try again.</i>
+    </div>
+
 
     <p>
         User name = <input type="text" name="username"/>
