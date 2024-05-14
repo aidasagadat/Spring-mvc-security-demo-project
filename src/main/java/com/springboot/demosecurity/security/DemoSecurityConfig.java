@@ -43,6 +43,9 @@ public class DemoSecurityConfig {
 
         http.authorizeHttpRequests(configurer ->
                 configurer
+                        .requestMatchers("/").hasRole("EMPLOYEE")
+                        .requestMatchers("/leaders/**").hasRole("MANAGER")
+                        .requestMatchers("/ceo/**").hasRole("CEO")
                         .anyRequest().authenticated()
                 )
                 .formLogin(form ->
@@ -56,6 +59,8 @@ public class DemoSecurityConfig {
                 .logout(logout -> logout.permitAll());
 
         ;
+
+
 
         return http.build();
 
