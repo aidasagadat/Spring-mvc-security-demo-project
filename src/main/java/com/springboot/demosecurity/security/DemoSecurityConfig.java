@@ -61,7 +61,7 @@ public class DemoSecurityConfig {
                         configurer.accessDeniedPage("/access-denied"))
         ;
 
-        ;
+
 
 
 
