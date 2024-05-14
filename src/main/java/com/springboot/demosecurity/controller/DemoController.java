@@ -18,4 +18,9 @@ public class DemoController {
         return "leaders";
     }
 
+    @GetMapping("/ceos")
+    public String showCeos(){
+        return "ceos";
+    }
+
 }
