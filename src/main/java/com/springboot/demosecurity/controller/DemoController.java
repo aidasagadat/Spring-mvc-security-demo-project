@@ -23,7 +23,7 @@ public class DemoController {
         return "ceos";
     }
 
-    @GetMapping("/noAccess")
+    @GetMapping("/access-denied")
     public String accessDenied(){
         return "access-denied";
     }
