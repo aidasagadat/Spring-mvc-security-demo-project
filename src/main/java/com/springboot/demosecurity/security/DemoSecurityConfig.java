@@ -45,7 +45,7 @@ public class DemoSecurityConfig {
                 configurer
                         .requestMatchers("/").hasRole("EMPLOYEE")
                         .requestMatchers("/leaders/**").hasRole("MANAGER")
-                        .requestMatchers("/ceo/**").hasRole("CEO")
+                        .requestMatchers("/ceos/**").hasRole("CEO")
                         .anyRequest().authenticated()
                 )
                 .formLogin(form ->
