@@ -23,4 +23,9 @@ public class DemoController {
         return "ceos";
     }
 
+    @GetMapping("/noAccess")
+    public String accessDenied(){
+        return "access-denied";
+    }
+
 }
