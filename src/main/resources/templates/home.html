@@ -8,28 +8,41 @@
 <body>
     <h2>Timurid Company Home Page</h2>
 
+
     Welcome to TIMURID company home page!
+
 
     <br>
     <hr>
     <br>
 
+
     User: <span sec:authentication="principal.username"></span>
     <br>
     Role(s): <span sec:authentication="principal.authorities"></span>
 
-    <br>
-    <br>
-
-    <a th:href="@{/leaders}">Leadership Meeting</a> (Only for Managers)
-    <!-- <a th:href="@{/CEO}">CEO info</a> (Only for CEOs) -->
 
     <br>
+    <br>
 
-    <a th:href="@{/ceos}">
-        Timurid company's Co-CEOSs' information
-    </a> (Strict access)
 
+    <!-- Only show this to MANAGERs-->
+    <div sec:authorize="hasRole('MANAGER')">
+         <a th:href="@{/leaders}">Leadership Meeting</a> (Only for Managers)
+    </div>
+
+
+
+    <br>
+
+
+
+    <!-- Only show this to the CEOs-->
+    <div sec:authorize="hasRole('CEO')">
+         <a th:href="@{/ceos}">
+             Timurid company's Co-CEOSs' information
+         </a> (Strict access)
+    </div>
 
     <br>
     <br>
