@@ -32,17 +32,14 @@
     </div>
 
 
-
-    <br>
-
-
-
     <!-- Only show this to the CEOs-->
     <div sec:authorize="hasRole('CEO')">
          <a th:href="@{/ceos}">
              Timurid company's Co-CEOSs' information
          </a> (Strict access)
     </div>
+
+
 
     <br>
     <br>
